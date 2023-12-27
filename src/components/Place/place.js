@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import I1 from '../../../public/image/i-1.webp';
+import I1 from '../../../public/image/I-1.webp';
 import I2 from '../../../public/image/i-2.png'; // Add more images as needed
 import TajMahalImage from '../../../public/image/i-3.jpeg';
 import RankiVavImage from '../../../public/image/Rani.jpg';
 import AdalajNiVavImage from '../../../public/image/Adalaj-ni-Vav.jpg';
 import MahabatMaqbaraImage from '../../../public/image/Maha.jpg';
-import IdarFortTumbNilImage from '../../../public/image/idar-Fort-Thumbnail.jpg';
+import IdarFortTumbNilImage from '../../../public/image/Idar-Fort-Thumbnail.jpg';
 import SidiSayyadDholaviraImage from '../../../public/image/sidisayad.jpeg';
 import SunTempleImage from '../../../public/image/e1.jpeg';
 import ChapanerImage from '../../../public/image/Champaner-1.jpeg';
