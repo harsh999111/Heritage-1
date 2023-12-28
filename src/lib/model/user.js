@@ -6,4 +6,6 @@ import mongoose from "mongoose";
     confirmpassword:String
  });
 
+ 
  export const User = mongoose.models.users || mongoose.model("users",userModel)
+

@@ -19,16 +19,11 @@ export async function GET(params) {
 export async function POST(request) {
     const payload = await request.json();
     await mongoose.connect(connectionSrt);
-
-    // Check if the user already exists in the database
     const existingUser = await User.findOne({ email: payload.email });
 
     if (existingUser) {
-        // User with the provided email already exists
         return NextResponse.json({ success: false, message: 'User with this email already exists' });
     }
-
-    // Create a new user if the email is not in use
     let user = new User(payload);
     const result = await user.save();
 

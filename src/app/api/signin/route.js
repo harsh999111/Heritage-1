@@ -8,8 +8,7 @@ export async function POST(request) {
   const payload = await request.json();
   await mongoose.connect(connectionSrt);
 
-  try {
-    // Check if the user already exists in the database
+  try {   
     const user = await User.findOne({ email: payload.email });
 
     console.log(user);
