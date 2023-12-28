@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Layer from '../../../public/icons/Layer_1.png'
+import Link from 'next/link';
 
 // Define the Signup component
 export default function Signup() {
@@ -187,6 +188,10 @@ export default function Signup() {
               >
                 Sign Up
               </button>
+        <div className="pt-2">
+
+        <Link href="/home" className='bg-black text-white flex justify-center '>Home</Link>
+        </div>
             </div>
 
             {/* Error messages */}
