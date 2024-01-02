@@ -1,24 +1,51 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import { FaWindowClose } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const Links = [
     { name: "Home", link: '/' },
     { name: "About", link: '/' },
-    { name: "Heritage List", link: '/' },
-    { name: "Contact Us", link: '#' }, 
+    { name: "Heritage List", link: '/Gujarat', dropdownOptions: ["GujaratHeritage"] },
+    { name: "Contact Us", link: '#' },
   ];
 
   const [open, setOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [heritageListOpen, setHeritageListOpen] = useState(false);
+  const [selectedHeritage, setSelectedHeritage] = useState('');
 
+  const router = useRouter(); // Initialize useRouter
+
+  // const toggleMenu = () => {
+  //   setOpen(!open);
+  // };
   const toggleMenu = () => {
     setOpen(!open);
+    setHeritageListOpen(false); // Close the Heritage List dropdown when the menu is toggled
   };
+
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
+  };
+
+  const toggleHeritageList = () => {
+    setHeritageListOpen(!heritageListOpen);
+  };
+
+  const handleHeritageChange = (option) => {
+    setSelectedHeritage(option);
+    toggleHeritageList(); // Close the dropdown after selection
+  };
+
+  const navigateToHeritagePage = () => {
+    // Check if "Gujarat Heritage" is selected and navigate accordingly
+    if (selectedHeritage === "Gujarat Heritage") {
+      router.push('/gujarat-heritage'); // Replace with the actual path
+    }
   };
 
   useEffect(() => {
@@ -32,39 +59,51 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [router]); // Add router as a dependency to useEffect
 
   return (
     <section className={`fixed top-0 w-full z-50 ${isSticky ? 'bg-yellow-500 shadow-md' : 'bg-yellow-500'}`}>
       <nav className="md:px-10 px-7 lg:px-14 md:flex items-center justify-between py-4">
-        <div className='text-xl'>
+        <div className='text-xl text-black'>
           <div>
             Heritage
           </div>
         </div>
-        <div className='text-3xl absolute right-8 top-3 cursor-pointer md:hidden' onClick={toggleMenu}>
+        <div className='text-3xl absolute right-8 top-3 cursor-pointer md:hidden text-black' onClick={toggleMenu}>
           <span className=''>☰</span>
         </div>
-        <ul className={`md:flex bg-yellow-500 md:items-center md:pb-0 pb-12 absolute md:static left-0 w-full md:w-auto md:pl-0 pl-9 ${open ? 'block' : 'hidden'}`}>
+        <ul className={`md:flex bg-yellow-500 md:items-center md:pb-0 pb-12  ${open ? 'md:static' : 'hidden'}  w-full md:w-auto md:pl-0 `}>
           {Links.map((Link, index) => (
             <li key={index} className='md:ml-8 text-xl md:my-0 my-7'>
-              {Link.name === "Contact Us" ? (
-                <a href="#" onClick={togglePopup}>{Link.name}</a>
+              {Link.name === "Heritage List" ? (
+                <div className="relative" onClick={toggleHeritageList}>
+                  <span className='cursor-pointer'>{Link.name}</span>
+                  {heritageListOpen && (
+                    <div className="absolute left-0 mt-2 bg-black text-white rounded-xl shadow-md">
+                      {Link.dropdownOptions.map((item, idx) => (
+                        <a href='Gujarat' key={idx} onClick={() => handleHeritageChange(item)} className='block  text-base py-2 px-4 cursor-pointer'>{item}</a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : Link.name === "Contact Us" ? (
+                <a href="#" onClick={togglePopup} className='cursor-pointer'>{Link.name}</a>
               ) : (
-                <a href={Link.link}>{Link.name}</a>
+                <a href={Link.link} className='cursor-pointer'>{Link.name}</a>
               )}
             </li>
           ))}
         </ul>
       </nav>
 
-      {/* Pop-up */}
-      {showPopup && (
+          {/* Pop-up */}
+          {showPopup && (
         <section className='h-full w-full fixed top-0 left-0 flex justify-center items-center bg-gray-800 bg-opacity-50'>
           <div className='bg-yellow-600 py-6 px-2 rounded-xl lg:grid lg:justify-center lg:px-[120px] 2xl:px-[100px] 2xl:py-14 grid justify-center items-center'>
             <form className='space-y-6 px-1'>
-            <div className='grid justify-end px-2 md:px-5 lg:justify-center'>
-              <button className='text-white text-lg bg-black px-6 py-0 rounded-lg ' onClick={togglePopup}>Exit</button>
+            <div className='grid justify-end px-2 md:px-5 lg:px-1 lg:py-1 '>
+              <button className='text-black text-lg  px-2 py-2 rounded-lg ' onClick={togglePopup}><FaWindowClose  />
+</button>
             </div>
               <div className='space-y-6 md:flex md:items-center lg:space-x-5 lg:px-3'>
                 <div className='space-x-8 pt-6 lg:space-x-3'>
