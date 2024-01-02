@@ -7,7 +7,7 @@ import Footer from '../../components/Footer/footer'
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Sidi from '../../../public/Gujarat/sidisayad.jpeg';
 import Chapaner from '../../../public/Gujarat/Chapaner.webp';
-import  Rani from '../../../public/Gujarat/Rani-ki-Vav.jpg'
+import  Rani from '../../../public/Gujarat/Rani-Ki-Vav.jpg'
 import Lothal from '../../../public/Gujarat/Lothal-.jpg'
 import Sun from '../../../public/Gujarat/Sun.jpg'
 import Adalaj from '../../../public/Gujarat/Adalaj.jpg'
