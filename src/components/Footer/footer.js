@@ -16,7 +16,7 @@ const Footer = () => {
                     <div className='flex justify-center pb-2 '>
                         <Image src={Layer} alt='Layer' className='h-20 w-20'/>
                     </div>
-                    <p className='md:flex md:justify-center lg:pt-6 md:pb-3 pb-3'><span>
+                    <p className='md:flex md:justify-center lg:pt-6 md:pb-3 pb-3 text-center'><span>
                     Heritage embrace, a contented heart space.
                     </span></p>
                 </div>
