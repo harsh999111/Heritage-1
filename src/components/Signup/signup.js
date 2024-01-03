@@ -190,7 +190,7 @@ export default function Signup() {
               </button>
         <div className="pt-2">
 
-        <Link href="/home" className='bg-black text-white flex justify-center '>Home</Link>
+        <Link href="/Bording" className='bg-black text-white flex justify-center '>Home</Link>
         </div>
             </div>
 
