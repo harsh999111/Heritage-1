@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const Links = [
-    { name: "Home", link: '/' },
-    { name: "About", link: '/' },
+    { name: "Home", link: '/home' },
+    { name: "About", link: '/about' },
     { name: "Heritage List", link: '/Gujarat', dropdownOptions: ["GujaratHeritage"] },
     { name: "Contact Us", link: '#' },
   ];
@@ -17,14 +17,12 @@ const Navbar = () => {
   const [heritageListOpen, setHeritageListOpen] = useState(false);
   const [selectedHeritage, setSelectedHeritage] = useState('');
 
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter(); 
 
-  // const toggleMenu = () => {
-  //   setOpen(!open);
-  // };
+
   const toggleMenu = () => {
     setOpen(!open);
-    setHeritageListOpen(false); // Close the Heritage List dropdown when the menu is toggled
+    setHeritageListOpen(false); 
   };
 
 
@@ -38,13 +36,12 @@ const Navbar = () => {
 
   const handleHeritageChange = (option) => {
     setSelectedHeritage(option);
-    toggleHeritageList(); // Close the dropdown after selection
+    toggleHeritageList(); 
   };
 
   const navigateToHeritagePage = () => {
-    // Check if "Gujarat Heritage" is selected and navigate accordingly
     if (selectedHeritage === "Gujarat Heritage") {
-      router.push('/gujarat-heritage'); // Replace with the actual path
+      router.push('/gujarat-heritage'); 
     }
   };
 
@@ -59,7 +56,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [router]); // Add router as a dependency to useEffect
+  }, [router]); 
 
   return (
     <section className={`fixed top-0 w-full z-50 ${isSticky ? 'bg-yellow-500 shadow-md' : 'bg-yellow-500'}`}>
