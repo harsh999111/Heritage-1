@@ -7,8 +7,11 @@ const Navbar = () => {
   const Links = [
     { name: "Home", link: '/home' },
     { name: "About", link: '/about' },
-    { name: "Heritage List", link: '/Gujarat', dropdownOptions: ["GujaratHeritage"] },
+    {name:"Gujarat",link:'/Gujarat'},
+    {name:"News",link:"/News"},
     { name: "Contact Us", link: '#' },
+    {name:"Account" , link:"/signin"},
+    {name:"Start",link:"/Bording" },
   ];
 
   const [open, setOpen] = useState(false);

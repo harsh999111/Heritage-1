@@ -108,24 +108,41 @@ const placesData = [
 
 const Place = () => {
   return (
-    <section className='h-full w-full relative  pb-10'>
+    <section className='h-full w-full relative pb-10'>
       {placesData.map((place) => (
-        <div key={place.id} className='bg-yellow-100 px-3 pb-4 py-12 h-full w-full  md:px-12 md:grid md:w-full md:space-x-4 lg:grid  lg:overflow-auto lg:grid-cols-[390px,1fr,1fr,1fr] lg:pt-10 2xl:grid-cols-4  2xl:pt-10 2xl:space-x-6 2xl:px-10 2xl:justify-center   2xl:static 2xl:overflow-auto'>
+        <div key={place.id} className='bg-yellow-100 px-3 pb-4 py-12 h-full w-full md:px-12 md:grid md:w-full md:space-x-4 lg:grid lg:overflow-auto  lg:pt-10 2xl:pt-10 2xl:space-x-6 2xl:px-10 2xl:justify-center 2xl:static 2xl:overflow-auto'>
+        <div className='lg:grid lg:grid-cols-[340px,1fr,1fr,1fr] lg:space-x-3 md:px-4'>
+
           <div className='pt-3 lg:pt-0 2xl:pt-0'>
-            <Image src={place.image} alt={`Image ${place.id}`}  className='rounded-2xl md:h-[400px] md:w-[750px] lg:h-[250px] lg:w-[600px] 2xl:w-[650px] 2xl:h-[250px]'/>
+            <Image src={place.image} alt={`Image ${place.id}`} className='rounded-2xl md:h-[400px] md:w-[750px] lg:h-[250px] lg:w-[600px] 2xl:w-[650px] 2xl:h-[250px]' />
           </div>
 
           <div className='text-amber-950 text-xl font-[Montagu Slab] font-bold pt-2 lg:pt-8  '>
             <p>{place.title}</p>
           </div>
 
-          <div className='text-orange-500 text-base  pt-1 lg:pt-8'>
+          <div className='text-orange-500 text-base pt-1 lg:pt-8'>
             <p>{`${place.years} Years Old`}</p>
             <p className='text-black'>{place.location}</p>
           </div>
 
           <div className='pt-2 lg:pt-6'>
             <p>{place.description}</p>
+          </div>
+        </div>
+
+          <div className='pt-2 lg:pt-6  '>
+            <p className='text-amber-950 font-[Montagu Slab] font-bold text-xl'>Heritage Awareness:</p>
+            <p className='text-base'>
+              Preserving our rich heritage is crucial for future generations. It not only reflects our history and culture but also provides a sense of identity and belonging. Awareness campaigns about the importance of heritage sites, their historical significance, and the need for conservation can contribute to their protection.
+            </p>
+          </div>
+
+          <div className='pt-2 lg:pt-6'>
+            <p className='text-amber-950 font-[Montagu Slab] font-bold text-xl'>Environmental Concerns:</p>
+            <p className='text-base'>
+              Pollution poses a significant threat to our heritage. Air pollution, water pollution, and climate change can degrade historical structures and artifacts. It is essential to raise awareness about responsible tourism, waste disposal, and eco-friendly practices to ensure the preservation of our cultural heritage for future generations.
+            </p>
           </div>
         </div>
       ))}

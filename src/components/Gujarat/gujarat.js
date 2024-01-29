@@ -101,7 +101,6 @@ const Gujarat = () => {
           <div className='flex justify-center items-center py-5 text-lg  2xl:text-3xl'>
             <p style={{ color: colors[currentColorIndex] }} className='px-3 rounded-lg py-2 font-bold'>{text}</p>
           </div>
-
           {Data.map((place) => (
             <div key={place.id} className=''>
             <div className='md:grid md:grid-cols-2 md:text-xl '>
@@ -120,7 +119,7 @@ const Gujarat = () => {
                 </div>
               </div>
             </div>
-            <div className=' '>
+            <div className='  '>
 
               <div className='px-4 pt-2'>
                 <span className='text-lg 2xl:text-2xl 2xl:font-bold'>About:</span>
