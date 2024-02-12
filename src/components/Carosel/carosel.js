@@ -50,7 +50,7 @@ const imageUrls = [
 export default function App() {
   return (
     <>
-      <section className='h-full  w-full pt-10 relative 2xl:pt-10'>
+      <section className='h-full  w-full pt-10  2xl:pt-10'>
         <Swiper
           spaceBetween={30}
         centeredSlides={true}

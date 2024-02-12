@@ -94,9 +94,7 @@ const Gujarat = () => {
   }, [colors.length]); 
 
   return (
-    <body className='bg-yellow-200'>
       <section className='h-full w-full bg-yellow-200 grid'>
-      <Navbar/>
         <div className='md:px-10  lg:px-16 2xl:px-20 grid pt-14'>
           <div className='flex justify-center items-center py-5 text-lg  2xl:text-3xl'>
             <p style={{ color: colors[currentColorIndex] }} className='px-3 rounded-lg py-2 font-bold'>{text}</p>
@@ -146,11 +144,7 @@ const Gujarat = () => {
             <Scroll/>
           </div>
         </div>
-        <div>
-              <Footer/>
-        </div>
       </section>
-    </body>
   );
 };
 

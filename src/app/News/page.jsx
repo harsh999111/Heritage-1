@@ -1,4 +1,4 @@
-import News from '@/components/News/News'
+import News from '../../components/News/News'
 import React from 'react'
 
 const NewsHeritage = () => {
