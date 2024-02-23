@@ -32,7 +32,7 @@ const Popup = ({ place, onClose }) => {
   return (
     <section className="h-full w-full fixed  lg:top-1  md:top-14 top-0 left-0 flex justify-center items-center bg-yellow-100 bg-opacity-50 overflow-y-auto 2xl:top-0">
       <div className="popup-content bg-yellow-100 p-4 h-full w-full pb-10 overflow-y-auto pt-20 md:pt-14 lg:pt-20  md:overflow-y-auto md:pb-20 lg:pb-20">
-        <span className="close text-2xl pb-6 pt-1" onClick={onClose}>
+        <span className="close text-2xl pb-6 pt-1 cursor-pointer" onClick={onClose}>
           <AiOutlineClose />
         </span>
         <div className="pt-10">
