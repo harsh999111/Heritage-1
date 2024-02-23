@@ -9,13 +9,8 @@ import Footer from '../../components/Footer/footer';
 const Home = () => {
   return (
     <div className="h-full w-full bg-yellow-100 space-y-4">
-    {/* <Navbar/> */}
       <Carsole />
-      {/* <Place /> */}
       <Place1/>
-      {/* <Contact /> */}
-      {/* <Footer/> */}
-
     </div>
   );
 };
