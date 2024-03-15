@@ -1,8 +1,8 @@
 // File: pages/api/signin.js
 import mongoose from "mongoose";
-import { connectionSrt } from "@/lib/db";
+import { connectionSrt } from "../../../lib/db";
 import { NextResponse } from "next/server";
-import { User } from "@/lib/model/signin";
+import { User } from "../../../lib/model/signin";
 
 export async function POST(request) {
   const payload = await request.json();

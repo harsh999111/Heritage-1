@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
-import { connectionSrt } from "@/lib/db";
-import { User } from "@/lib/model/user";
+import { connectionSrt } from "../../../lib/db";
+import { User } from "../../../lib/model/user";
 
 export async function GET(params) {
     let data = [];
