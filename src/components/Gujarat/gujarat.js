@@ -72,7 +72,7 @@ const Gujarat = () => {
                 </div>
               </div>
             </div>
-            <div className="  ">
+            <div className=" ">
               <div className="px-4 pt-2">
                 <span className="text-lg 2xl:text-2xl 2xl:font-bold">
                   About:
