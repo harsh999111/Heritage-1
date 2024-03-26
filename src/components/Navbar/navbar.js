@@ -10,7 +10,9 @@ const Navbar = () => {
     {name:"Gujarat",link:'/Gujarat'},
     {name:"News",link:"/News"},
     { name: "Contact Us", link: '#' },
-    {name:"Account" , link:"/signin"},
+    {name:"Login" , link:"/signin"},
+    {name:"Register", link:"/signup"},
+    {name:"Logout"},
     {name:"Start",link:"/Bording" },
   ];
 
