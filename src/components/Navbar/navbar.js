@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
+import { FaListUl } from "react-icons/fa6";
+import { GrClose } from "react-icons/gr";
 
 const Navbar = () => {
   const Links = [
@@ -12,7 +14,6 @@ const Navbar = () => {
     { name: "Contact Us", link: '#' },
     {name:"Login" , link:"/signin"},
     {name:"Register", link:"/signup"},
-    {name:"Logout"},
     {name:"Start",link:"/Bording" },
   ];
 
@@ -71,8 +72,12 @@ const Navbar = () => {
             Heritage
           </div>
         </div>
-        <div className='text-3xl absolute right-8 top-3 cursor-pointer md:hidden text-black' onClick={toggleMenu}>
-          <span className=''>☰</span>
+        <div className=' absolute right-8 top-4 cursor-pointer md:hidden text-black' onClick={toggleMenu}>
+          <span className='text-2xl'>
+          {/* <FaListUl /> */}
+    {/* Render the hamburger menu icon when the menu is closed */}
+    {open ? <GrClose /> : <FaListUl/>}
+          </span>
         </div>
         <ul className={`md:flex bg-yellow-500 md:items-center md:pb-0 pb-12  ${open ? 'md:static' : 'hidden'}  w-full md:w-auto md:pl-0 `}>
           {Links.map((Link, index) => (
