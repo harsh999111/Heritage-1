@@ -3,6 +3,9 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { auth } from '../../lib/firebase';
+import Logo from '../../../public/icons/Layer_1.png'
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -27,11 +30,8 @@ export default function Signup() {
     <>
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            className="mx-auto h-10 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company"
-          />
+      
+          <Image src={Logo} alt='Logo' className='h-24 w-24 mx-auto'/>
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
             Sign up
           </h2>
@@ -93,14 +93,30 @@ export default function Signup() {
               </div>
             </div>
 
-            <div>
+            <div className='gap-y-8 grid'>
               <button
                 disabled={(!email || !password || !passwordAgain) || (password !== passwordAgain)}
                 onClick={() => signup()}
-                className="disabled:opacity-40 flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="disabled:opacity-40 flex w-full justify-center rounded-md bg-yellow-600 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:bg-yellow-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Sign Up
               </button>
+
+              <div className='flex  items-center'>
+              <div className='text-center'>
+
+                Already a account ?
+              </div>
+        <Link href="/signin" className=''>
+        <button
+               
+                
+                className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6  "
+              >
+                Sign In 
+              </button>
+        </Link>
+              </div>
             </div>
           </div>
         </div>

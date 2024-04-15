@@ -2,6 +2,8 @@
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
+import Logo from '../../../public/icons/Layer_1.png'
 
 export default function Signin() {
   const [email, setEmail] = useState('');
@@ -11,11 +13,7 @@ export default function Signin() {
     <>
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            className="mx-auto h-10 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company"
-          />
+        <Image src={Logo} alt='Logo' className='h-24 w-24 mx-auto'/>
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight ">
             Sign in to your account
           </h2>
@@ -46,7 +44,7 @@ export default function Signin() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <div onClick={() => router.push('/forgot-password')} className="cursor-pointer font-semibold text-indigo-400 hover:text-indigo-300">
+                  <div onClick={() => router.push('/forgot-password')} className="cursor-pointer font-semibold text-yellow-600 hover:text-yellow-600">
                     Forgot password?
                   </div>
                 </div>
@@ -66,9 +64,9 @@ export default function Signin() {
 
             <div>
               <button
-                onClick={() => signIn('credentials', {email, password, redirect: true, callbackUrl: '/'})}
+                onClick={() => signIn('credentials', {email, password, redirect: true, callbackUrl: '/start'})}
                 disabled={!email || !password}
-                className="disabled:opacity-40 flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="disabled:opacity-40 flex w-full justify-center rounded-md bg-yellow-600 px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:bg-yellow-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Sign in
               </button>
@@ -77,7 +75,7 @@ export default function Signin() {
 
           <p className="mt-10 text-center text-sm text-gray-400">
             Not a member?{' '}
-            <button onClick={() => router.push('signup')} className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">
+            <button onClick={() => router.push('signup')} className="font-semibold leading-6 text-yellow-600 hover:text-yellow-600">
               Sign Up
             </button>
           </p>
