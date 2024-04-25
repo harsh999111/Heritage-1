@@ -10,7 +10,7 @@ const Navbar = () => {
     { name: "Home", link: '/home' },
     { name: "About", link: '/about' },
     {name:"Gujarat",link:'/Gujarat'},
-    {name:"News",link:"/news"},
+    {name:"News",link:"/News"},
     { name: "Contact Us", link: '#' },
     {name:"Login" , link:"/signin"},
     {name:"Register", link:"/signup"},
